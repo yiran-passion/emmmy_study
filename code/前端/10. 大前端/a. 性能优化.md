@@ -1,6 +1,6 @@
 ## 性能优化指标
 
-- 根据 chrome 最新规则，前端性能优化指标主要有 **FCP(First Contenful Paint)**, **SI(Speed index)**, **LCP(Largest Contentfull Paint)**, **TBT(Total Block Time)**, **CLS(Cumulative Layout Shift)**
+- 根据 chrome 最新规则，前端性能优化指标主要有 **FCP(First Contenful Paint)**, **LCP(Largest Contentfull Paint)**, **TBT(Total Block Time)**, **CLS(Cumulative Layout Shift)**, **SI(Speed index)**
 
 
 ### FCP(First Contenful Paint)
@@ -21,7 +21,24 @@
 
 - 理想的 LCP 应该控制在 2.5s 以内
 
-### 
+### TBT(Total Block Time)
+
+- TBT（总阻塞时间）：用于衡量长任务对主线程的阻塞时间总和。即从 FCP（首次内容绘制） 到 TTI（页面可交互时间），主线程因运行长任务被阻塞的总时间。
+
+- 可以通过以下方式减少 TBT 时间：
+
+  1. 减轻第三方代码的影响
+  2. 缩短 JavaScript 的执行时间
+  3. 减少主线程的工作量
+  4. 控制请求数量和数据大小
+
+- 理想情况下 TBT 在移动设备上应该控制在 300ms 以下，在 web 设备上应该控制在 100ms 以下。
+
+### SI(Speed index)
+
+- SI（速度指数）：用户衡量页面渲染用户可见内容的迅速程度。SI 并不是一个具体的时间点，而是一个综合性能指标。他表示页面从加载开始到页面基本可见的过程中，用户感知的加载速度。
+
+- 一般来说，移动设备上 SI 低于 3.4s ，桌面端低于 1.3s ，LightHouse 的评分能在 90 分以上。
 
 
 ## 性能优化方案
