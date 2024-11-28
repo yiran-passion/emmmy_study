@@ -1,6 +1,6 @@
 ## 性能优化指标
 
-- 根据 chrome 最新规则，前端性能优化指标主要有 **FCP(First Contenful Paint)**, **LCP(Largest Contentfull Paint)**, **TBT(Total Block Time)**, **CLS(Cumulative Layout Shift)**, **SI(Speed index)**
+> 根据 chrome 最新规则，前端性能优化指标主要有 **FCP(First Contenful Paint)**, **LCP(Largest Contentfull Paint)**, **TBT(Total Block Time)**, **CLS(Cumulative Layout Shift)**, **SI(Speed index)**
 
 
 ### FCP(First Contenful Paint)
@@ -43,34 +43,33 @@
 
 ## 性能优化方案
 
+> 性能优化主要分为两大类：**加载时优化**和**运行时优化**
 
-### 优化方案
+### 加载时性能优化
 
-- **1. 启用前端缓存**
+> 加载时优化：主要是让网站的加载速度更快。主要的性能指标是**白屏时间**和**首屏加载时间**。
 
+- 白屏时间：
 
-- **2. Gzip 压缩**
+  - 计算方式：将下面脚本放在 </head> 前面即可获取白屏时间。
 
+    ```html
+    <script>
+        console.log(new Date().getTime() - performance.timing.navigationStart)
+    </script>
+    ```
 
-- **3. 节流函数和防抖函数**
+- 首屏加载时间：
 
+  - 计算方式：在 window.onload 中执行下面代码即可获取首屏加载时间。
 
-- **4. 异步加载 script 标签**
+    ```js
+    console.log(new Date().getTime() - performance.timing.navigationStart)
+    ```
 
+- 优化方案
 
-- **5. 减少重排和重绘**
-
-
-- **6. 使用合适格式的图片，字体文件使用 woff2 压缩**
-
-
-- **7. 合并请求，避免接口重复调用，接口数据添加缓存**
-
-
-- **8. 启用事件委托（事件代理）**
-
-
-- **9. 使用懒加载**
+  - 
 
 
-- **10. 骨架屏**
+### 运行时性能优化
